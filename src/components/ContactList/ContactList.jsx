@@ -1,4 +1,4 @@
-import { getContacts, removeContact } from 'redux/contactsSlice';
+import { deleteContact, getContacts } from 'redux/contactsSlice';
 import {
   ContactListUl,
   ContactListItem,
@@ -13,7 +13,7 @@ export const ContactList = () => {
   const dispatch = useDispatch();
 
   const handleDeleteContact = contactId => {
-    dispatch(removeContact(contactId));
+    dispatch(deleteContact(contactId));
   };
 
   const filteredContacts = contacts.filter(contact =>

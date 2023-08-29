@@ -28,23 +28,23 @@ export const ContactForm = () => {
 
   const handleFormSubmit = e => {
     e.preventDefault();
- 
-      const existingContact = contacts.find(
-        contact => contact.name.toLowerCase() === name.toLowerCase()
-      );
 
-      if (existingContact) {
-        alert(`${name} is already in contacts`);
-      } else {
-        const newContact = {
-          id: nanoid(),
-          name: name,
-          number: number,
-        };
+    const existingContact = contacts.find(
+      contact => contact.name.toLowerCase() === name.toLowerCase()
+    );
 
-        dispatch(addContact(newContact));
+    if (existingContact) {
+      alert(`${name} is already in contacts`);
+    } else {
+      const newContact = {
+        id: nanoid(),
+        name: name,
+        number: number,
+      };
 
-        setName('');
+      dispatch(addContact(newContact));
+
+      setName('');
       setNumber('');
     }
   };
